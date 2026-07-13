@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+                body {
+                padding-bottom: 214px;
+                width: 100%;
+                background-color:  #f0f2f5;
+            }
+
+            .header-div {
+                display: flex;
+                flex-direction: row;
+                background-color: rgb(74, 71, 71);
+                padding: 5px;
+                justify-content: space-between;
+            }
+
+            .school-name {
+                color: white;
+            }
+
+            .right-section-header {
+                padding-top: 20px;
+            }
+
+            .span-about,
+            .span-contact,
+            .span-donation {
+                text-decoration: underline;
+                color: blue;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .span-faq {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+                padding-right: 15px;
+            }
+
+            .header-fixed {
+                background-color: aqua;
+                position: sticky;
+                display: flex;
+                flex-direction: row;
+                top: 0;
+                padding: 5px;
+                z-index: 1000;
+                justify-content: space-between;
+            }
+             .left-section {
+                width: 170x;
+                margin-right: 4px;
+             }   
+            .school-logo {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                padding: 5px;
+            }
+            .right-section{
+             flex: 1;
+             align-items: center;
+             justify-content: space-around;
+             display: flex;
+            }
+
+             .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+            .faq{
+                text-align: center;
+                color: #2a6592;
+                font-size: 50px;
+                font-weight: 900;
+                font-family: 'Times New Roman', Times, serif;
+                margin-bottom: 10px;
+                padding: 30px;
+            }
+
+            .faq-section{
+                max-width: 1000px;
+                margin: 50px auto;
+                box-shadow:  0 5px 20px rgba(0, 0, 0, 0.4);
+                background-color: #ffffff;
+                border-radius: 8px;
+                padding: 30px;
+            }
+
+            .here{
+                color:  #4b5563;
+                font-size: x-large;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-align: center;
+                max-width: 800px;
+                line-height: 1.5;
+                margin: 0 auto;
+            }
+
+            .h2{
+            font-size: 31px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #2563eb;
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 12px;
+            }
+            
+            .faq-list{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin: 20px;
+            }
+
+            details{
+                background-color: #eff6ff;
+                border-radius: 12px;
+                padding: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            }
+
+            summary{
+                color: #1e40af;
+                font-size: x-large;
+                font-weight: 600;
+                cursor: pointer;
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                details[open] summary .iconplus {
+                display: none;
+            }
+
+            details:not([open]) summary .iconminus {
+                display: none;
+            }
+
+            sumary::-webkit-details-marker {
+            display: none;
+            }
+
+            .iconminus,
+            .iconplus{
+                font-size: 30px ;
+                color: #1e40af;
+            }
+
+            details p{
+                 margin-top: 14px;
+                color: #4b5563;
+                line-height: 1.625;
+            }
+
+            .Contact-div{
+                background-color: rgb(16, 2, 2);
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .contact-left-section{
+                background-color: whitesmoke;
+            }
+            .contact-h1{
+                font-size: x-large;
+                color: rgb(40, 40, 172);
+                font-weight: 900;
+                text-align: center;
+            }
+            .contact-address,
+            .contact-contact,
+            .contact-follow{
+                font-weight: 700;
+                font-size: large;
+                font-size: medium;
+                padding-left: 4px;
+                text-align: center;
+            }
+            .navi-section{
+                color: antiquewhite;
+                font-size: medium;
+                font-weight: normal;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                text-align: center;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .copywrite-section{
+                display: flex;
+                flex-direction: row;
+            }
+            .copywrite-left-section{
+                width: 180px;
+                flex: 1;
+            }
+            .h2-copywrite-section{
+                color: antiquewhite;
+                font-size:medium ;
+
+            }
+            .copywrite-right-section{
+                justify-content: end;
+            }
+            .span-about-copywrite,
+            .span-faq-copywrite,
+            .span-contact-copywrite,
+            .span-donation-copywrite{
+                text-decoration: underline;
+                margin-right: 15px;
+                color: antiquewhite;
+                cursor: pointer;
+                display: inline-block;
+                justify-content: end;
+            }
+    </style>
+    <title>shool academy</title>
+</head>
+<body>
+    <div class="header-div">
+            <div>
+                <h1 class="school-name">
+                    SCHOOL ACADEMY
+                </h1>
+            </div>
+            <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+            <div class="right-section">
+                 <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button " type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+        </div>
+        <h1 class="faq">
+            FAQs
+        </h1>
+        <section class="faq-section">
+            <h4 class="here">
+                Here are some common questions parents, students, and prospective families might have about our school.
+            </h4>
+            <section>
+                <h2 class="h2">
+                    Admissions & Enrollment
+                </h2>
+                
+                <div class="faq-list">
+                    <details>
+                        <summary>
+                            How do I apply to School Academy?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                             To apply, please visit our <a href="#">online application portal</a>. Required documents typically include academic transcripts, birth certificate, and immunization records. The application deadline for the upcoming academic year is <strong>March 15th</strong>. We accept students from age 3 for our pre-kindergarten program up to Grade 12.
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                             What are the admission requirements?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                            Admission requirements vary by grade level but generally include a review of previous academic records, a standardized entrance exam (for grades 5 and above), and an interview with the admissions committee. Recommendations from previous teachers may also be requested.
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                             What is the tuition fee and what does it cover?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                            Our tuition fees vary by grade level. The fees cover academic instruction, textbooks, most school supplies, and participation in standard extracurricular activities. Detailed fee schedules and payment options are available on our <a href="#">Tuition & Fees page</a>.
+                        </p>
+                    </details>
+                                   <details>
+                        <summary>
+                             What is the student-teacher ratio?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>Our average student-teacher ratio is <strong>12:1</strong>, ensuring personalized attention and a supportive learning environment for all students.
+                        </p>
+                    </details>
+                </div>
+                
+            </section>
+                        <section>
+                <h2 class="h2">
+                    Student Life & Well-being
+                </h2>
+                
+                <div class="faq-list">
+                    <details>
+                        <summary>
+                             What are the school hours?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                             School hours for all grades are from <strong>8:30 AM to 3:30 PM</strong>, Monday through Friday. We have early dismissal at 1:00 PM on the last Friday of each month for faculty professional development.
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                              Is transportation provided?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                             We offer a limited number of bus routes for student transportation. Details on routes, availability, and fees can be found on our <a href="#">Transportation page</a>. Many families also organize carpools, and we have designated drop-off and pick-up zones.
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                             What is your school's policy on bullying?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                            School Academy has a strict zero-tolerance policy on bullying. We promote a safe and respectful environment for all students. Our anti-bullying policy outlines clear reporting mechanisms, disciplinary actions, and support services for victims. Students are encouraged to report any incidents to a trusted adult.
+                        </p>
+                    </details>
+                                   <details>
+                        <summary>
+                             How does the school handle student health and emergencies?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        We have a full-time school nurse on campus to attend to student health needs and administer first aid. In case of a medical emergency, parents/guardians will be contacted immediately. We require up-to-date emergency contact information and medical history for all students.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            What is the school's dress code/uniform policy?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        School Academy requires students to wear a school uniform. The uniform policy promotes a sense of community and minimizes distractions. Detailed guidelines on uniforms, including approved vendors, can be found in the student handbook or on our <a href="#">Uniform Policy page</a>.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                             What are the options for lunch?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                         Yes, our cafeteria provides healthy and nutritious lunch options daily. Students can choose from a rotating menu that includes hot meals, salad bar, and vegetarian options. Packed lunches from home are also permitted. Information on meal plans and menus can be found on the <a href="#">Dining Services page</a>.
+                        </p>
+                    </details>
+                </div>
+                
+            </section>
+            <section>
+                <h2 class="h2">
+                      General Information
+                </h2>
+                
+                <div class="faq-list">
+                    <details>
+                        <summary>
+                             How can parents get involved in the school community?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                            We highly value parent involvement! Parents can join our Parent-Teacher Association (PTA) or volunteer for various school events, classroom activities, or committees. Information on how to get involved is regularly shared through our newsletters and parent portal.
+
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                        How does the school communicate with parents?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                        We maintain open communication with parents through various channels, including our secure online parent portal, weekly newsletters, email announcements, and scheduled parent-teacher conferences. Teachers are also available for individual meetings by appointment.
+                        </p>
+                    </details>
+                                        <details>
+                        <summary>
+                        What security measures are in place at the school?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        <p>
+                        The safety and security of our students are paramount. We have controlled access points, security cameras, and trained security personnel on campus during school hours. All visitors are required to sign in and wear a visitor's badge. We also conduct regular emergency drills.
+                        </p>
+                    </details>
+                                   <details>
+                        <summary>
+                        Where can I find the school calendar?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        The official school calendar, including holidays, events, and important dates, is available on our website's <a href="#">Calendar page</a>. You can also subscribe to our digital calendar for automatic updates.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                        Who should I contact if I have further questions?
+                             <span class="iconplus">+</span>
+                             <span class="iconminus">-</span>
+                        </summary>
+                        For general inquiries, please contact our main office at <a href="tel:+2349166100490">(+234) 9166100490</a> or email <a href="mailto:info@schoolacademy.edu">info@[schoolacademy.edu]</a>. For specific questions, you can find a directory of departments and staff on our <a href="#">Contact Us page</a>.
+                        </p>
+                    </details>
+                </div>
+                
+            </section>
+        </section>
+        <section id="ContactDiv">
+         <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                       <p class="contact-contact">
+                        <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                        <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. -->
+                    </div>
+            </div>
+            <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

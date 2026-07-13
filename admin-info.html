@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+                width: 100%;
+                color: rgb(22, 21, 21);
+            }
+            p,
+            li{
+                font-size: 22px;
+            }
+            .header-div {
+                display: flex;
+                flex-direction: row;
+                background-color: rgb(74, 71, 71);
+                padding: 5px;
+                justify-content: space-between;
+                height: 70px;
+            }
+
+            .school-name {
+                color: white;
+            }
+
+            .right-section-header {
+                padding-top: 20px;
+            }
+
+            .span-about,
+            .span-contact,
+            .span-donation {
+                text-decoration: underline;
+                color: blue;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .span-faq {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+                padding-right: 15px;
+            }
+
+            .header-fixed {
+                background-color: aqua;
+                position: sticky;
+                display: flex;
+                flex-direction: row;
+                top: 0;
+                padding: 5px;
+                z-index: 1000;
+                justify-content: space-between;
+            }
+             .left-section {
+                width: 170x;
+                margin-right: 4px;
+             }   
+            .school-logo {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                padding: 5px;
+            }
+            .right-section{
+             flex: 1;
+             align-items: center;
+             justify-content: space-around;
+             display: flex;
+            }
+
+               .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .active{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+
+            .slant{
+                font-weight: bolder;
+                color: blue;
+                font-size: 50px;
+            }
+            .admins-welcome{
+                text-align: center;
+            }
+
+            .read-more-section{
+                background-color: #fff ;
+                display: flex;
+                align-items: center;
+                max-width: 1360px;
+                margin: 50px auto;
+                box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+             .image-div{
+                flex: 2;
+                background-color:#e0f2f7 ;
+                min-width: 600px;
+                padding: 20px;
+                box-sizing: border-box;
+                overflow: hidden;
+                min-height: 1100px;
+                border-radius: 4px;
+            }
+
+            .image-div img{
+                display: block;
+                height: auto;
+                width: 100%;
+                border-radius: 100%;
+                border: 5px solid #007bff;
+                box-sizing: border-box;
+                object-fit: cover;
+                aspect-ratio: 1 /1;
+            }
+
+            .tittle{
+                text-align: center;
+                padding: 15px 0;
+                color: #2c3e50;
+            }
+
+            .tittle h3{
+                color: #007bff;
+                font-size: 30px;
+                padding-bottom: 30px;
+            }
+
+            .tittle p{
+                font-size: 20px;
+                color: #555;
+                margin: 0;
+                font-weight: bolder;
+            }
+            .glad-div{
+                flex: 3;
+                padding: 40px;
+                min-width: 700px;
+            }
+
+            .glad-div h1{
+                color: rgb(73, 73, 243);
+                font-size: 65px;
+            }
+
+            .glad-div p{
+                margin-bottom: 15px;
+            }
+
+            .glad-div b{
+                color: rgb(73, 73, 243) ;
+                font-size: 20px;
+            }
+
+            .glad-div strong{
+                color:  #0056b3;
+            }
+
+            .glad-div h2{
+                color: blueviolet;
+                font-size: 25px;
+            }
+            /*
+             .image-text{
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .admins-pics{
+                display: inline-block;
+                margin-right: 20px;
+            }
+            .admin-pic-edit{
+                width: 100%;
+                height: 439px;
+                border-radius: 20px;
+                margin-top: 65px;
+            }
+            .h2-gh{
+                text-align: center;
+            }
+            .firsr-row{
+                display: inline-block;
+                margin-left: 20px;
+            }
+            .h2-center{
+                text-align: center;
+            }
+            .admins-pic{
+                width: 200px;
+                display: inline-block;
+                height: auto;
+            }
+            .figure{
+                align-items: left;
+            }
+            .remains{
+                display: inline-block;
+            }
+                */
+            .Contact-div{
+                background-color: rgb(16, 2, 2);
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .contact-left-section{
+                background-color: whitesmoke;
+            }
+            .contact-h1{
+                font-size: x-large;
+                color: rgb(40, 40, 172);
+                font-weight: 900;
+                text-align: center;
+            }
+            .contact-address,
+            .contact-contact,
+            .contact-follow{
+                font-weight: 700;
+                font-size: large;
+                font-size: medium;
+                padding-left: 4px;
+                text-align: center;
+            }
+            .navi-section{
+                color: antiquewhite;
+                font-size: medium;
+                font-weight: normal;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                text-align: center;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .copywrite-section{
+                display: flex;
+                flex-direction: row;
+            }
+            .copywrite-left-section{
+                width: 180px;
+                flex: 1;
+            }
+            .h2-copywrite-section{
+                color: antiquewhite;
+                font-size:medium ;
+
+            }
+            .copywrite-right-section{
+                justify-content: end;
+            }
+            .span-about-copywrite,
+            .span-faq-copywrite,
+            .span-contact-copywrite,
+            .span-donation-copywrite{
+                text-decoration: underline;
+                margin-right: 15px;
+                color: antiquewhite;
+                cursor: pointer;
+                display: inline-block;
+                justify-content: end;
+            }
+           
+    </style>
+    <title>school academy</title>
+</head>
+<body>
+   <div class="header-div">
+            <div>
+                <h1 class="school-name">
+                    SCHOOL ACADEMY
+                </h1>
+            </div>
+            <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+             <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button active" type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+    </div>
+        <h1>
+            <span class="slant">&#124;</span> From The Head Of School
+        </h1>
+        <br><br>
+        <h1 class="admins-welcome">
+                    Welcome To Our Prestigious School.
+                </h1>
+                <br>
+                <section class="read-more-section">
+                    <div class="image-div ">
+                        <img class="admin-image" src="./pictures/admin-profile.png" alt=" Mrs Da Siva">
+                        <div class="tittle">
+                            <h3> Mrs Da Siva</h3>
+                        <P> Admin School Academy</P>
+                        </div>
+                    </div>
+                    <div class="glad-div">
+                        <h1>
+                            Glad You're Here
+                        </h1>
+                        <p>
+                    <strong>Welcome to School Academy! </strong>We're so excited you dropped by our little corner of the internet. Whether you're thinking of joining us, a parent checking things out, part of our awesome staff, or just curious about what we do, we hope you'll find everything you need right here. It's a peek into the lively, supportive vibe that makes our school so special!
+                        </p>
+                        <h2>
+                            Who We're Talking To
+                        </h2>
+                        <p>
+                    <b> Thinking of becoming a student here? </b> Awesome! We're all about helping you shine, challenging your brain in cool ways, and boosting whatever you're passionate about. Dive into all the amazing stuff waiting for you from our diverse classes to all the fun clubs and activities. Imagine yourself totally rocking it in a place where everyone's ideas are heard and every dream gets a high-five. <br>
+                   <b>To all our incredible parents and guardians: </b>We totally get how big a decision choosing a school is. Here at School Academy, we're dedicated to making sure your kids are in a safe, welcoming, and super stimulating place where they can grow and learn academically, socially, and emotionally. We love working with you because we know that when we team up, kids really thrive. <br>
+                   <b>To our hardworking faculty and staff:</b>You guys are the heart and soul of this place! Seriously, your passion, smarts, and total dedication are what make School Academy amazing. A huge thank you for shaping young minds, inspiring future leaders, and creating such a nurturing space where learning just clicks. <br>
+                   <b>And to our fantastic alumni and community members: </b> You're a big part of our extended family! Your ongoing support and involvement add so much to our school's story and open up awesome connections for our current students.
+                        </p>
+                        <h2>
+                            Our Vision: Growing Great Minds and Good People
+                        </h2>
+                                        <p>
+                    At School Academy, we're way more than just a school building; we're a community that's all about helping every student become a well-rounded, ready-for-anything kind of person. Our whole philosophy is built onsparking curiosity, building strong character, and encouraging creative thinking. <br>
+                    We believe that real learning goes beyond what's in a textbook. It's about:
+                    <li><b>Being Super Curious: </b> Getting students to ask big questions, explore new ideas, and truly love learning, for life!</li>
+                    <li> <b>Being Good People:</b>  Helping everyone grow with values like honesty, respect, bouncing back when things are tough, and being kind to others.</li>
+                    <li><b>Getting Creative: </b>Giving students the tools to think outside the box, solve tricky problems, and be ready for whatever the future throws their way.</li>
+                    <li><b>Working Together:</b>Creating a space where students learn from each other, team up on projects, and really appreciate all the different viewpoints.</li> <br>
+                    <p>
+                        Thanks to our exciting curriculum and morden facilities, we aim to give every student an unforgettable learning experience. It's all about helping them discover their unique talents and reach for the stars! <br>
+                    Thanks for stopping by, and we can't wait to connect with you!
+                    </p>
+        </p>
+                    </div>
+                </section>
+
+                      
+            <!--
+                 <div class="image-text">
+             <div class="admins-pics" >
+            <img class="admin-pic-edit" src="pictures/admin-profile.png" alt="image not found">
+        </div>
+
+                <div class="first-row">
+            <h2 class="h2-gh">
+                    Glad You Are Here!
+                </h2>
+        <p>
+            <p>
+                   Welcome to School Academy! We're so excited you dropped by our little corner of the internet. Whether you're thinking of joining us, a parent checking things out, part of our awesome staff, or just curious about what we do, we hope you'll find everything you need right here. It's a peek into the lively, supportive vibe that makes our school so special!
+                </p>
+                <h2 class="h2-center">
+                    Who We're Talking To
+                </h2>
+                <p>
+                    <b> Thinking of becoming a student here? </b> Awesome! We're all about helping you shine, challenging your brain in cool ways, and boosting whatever you're passionate about. Dive into all the amazing stuff waiting for you from our diverse classes to all the fun clubs and activities. Imagine yourself totally rocking it in a place where everyone's ideas are heard and every dream gets a high-five. <br>
+                   <b>To all our incredible parents and guardians: </b>We totally get how big a decision choosing a school is. Here at School Academy, we're dedicated to making sure your kids are in a safe, welcoming, and super stimulating place where they can grow and learn academically, socially, and emotionally. We love working with you because we know that when we team up, kids really thrive. <br>
+                   <b>To our hardworking faculty and staff:</b>You guys are the heart and soul of this place! Seriously, your passion, smarts, and total dedication are what make School Academy amazing. A huge thank you for shaping young minds, inspiring future leaders, and creating such a nurturing space where learning just clicks. <br>
+                   <b>And to our fantastic alumni and community members: </b> You're a big part of our extended family! Your ongoing support and involvement add so much to our school's story and open up awesome connections for our current students.
+                </p>
+            </div>
+        </div>
+                <h2>Our Vision: Growing Great Minds and Good People</h2>
+                <p>
+                    At School Academy, we're way more than just a school building; we're a community that's all about helping every student become a well-rounded, ready-for-anything kind of person. Our whole philosophy is built onsparking curiosity, building strong character, and encouraging creative thinking. <br>
+                    We believe that real learning goes beyond what's in a textbook. It's about:
+                    <li><b>Being Super Curious: </b> Getting students to ask big questions, explore new ideas, and truly love learning, for life!</li>
+                    <li> <b>Being Good People:</b>  Helping everyone grow with values like honesty, respect, bouncing back when things are tough, and being kind to others.</li>
+                    <li><b>Getting Creative: </b>Giving students the tools to think outside the box, solve tricky problems, and be ready for whatever the future throws their way.</li>
+                    <li><b>Working Together:</b>Creating a space where students learn from each other, team up on projects, and really appreciate all the different viewpoints.</li> <br>
+                    <p>
+                        Thanks to our exciting curriculum and morden facilities, we aim to give every student an unforgettable learning experience. It's all about helping them discover their unique talents and reach for the stars! <br>
+                    Thanks for stopping by, and we can't wait to connect with you!
+                    </p>
+        </p>
+            -->
+          <section id="ContactDiv">
+         <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                       <p class="contact-contact">
+                        <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                        <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. --> 
+                    </div>
+            </div>
+            <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

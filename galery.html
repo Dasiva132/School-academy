@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            width: 100%;
+            justify-content: center;
+            background-color: #f0f4f8;
+        }
+
+        .header-div {
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(74, 71, 71);
+            padding: 5px;
+            justify-content: space-between;
+        }
+
+        .school-name {
+            color: white;
+        }
+
+        .right-section-header {
+            padding-top: 20px;
+        }
+
+        .span-about,
+        .span-contact,
+        .span-donation {
+            text-decoration: underline;
+            color: blue;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+
+        .span-faq {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            padding-right: 15px;
+        }
+
+        .header-fixed {
+            background-color: aqua;
+            position: sticky;
+            display: flex;
+            flex-direction: row;
+            top: 0;
+            padding: 5px;
+            z-index: 1000;
+            justify-content: space-between;
+        }
+
+        .left-section {
+            width: 170x;
+            margin-right: 4px;
+        }
+
+        .school-logo {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            padding: 5px;
+        }
+
+        .right-section {
+            flex: 1;
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+        }
+
+         .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .active{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .galery-section {
+            background-color: #ffffff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 1250px;
+            width: 100%;
+            margin: 40px auto;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #e0e7eb;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 65px;
+            color: #2a6592;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 19px;
+            color: #607d8b;
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.3;
+        }
+
+        .futured-moment {
+            color: #2a6592;
+            font-size: 40px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 15px;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+        }
+
+        .futured-moment::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #007bff;
+            border-radius: 2px;
+            
+        }
+
+        .featured-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .item-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out;
+        }
+
+        .item-card:hover {
+            transform: translateX(-5px);
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+
+        }
+
+        .recent-uploads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .recent-uploads-grid-items {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-out;
+        }
+
+        .recent-uploads-grid-items:hover {
+            transform: translateX(-6px);
+        }
+
+        .recent-uploads-grid-items img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .album-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .album-card:hover {
+            transform: scale(0.98);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .album-pic {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .album-pic img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .album-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .album-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .album-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2a6592;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .view-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .Contact-div {
+            background-color: rgb(16, 2, 2);
+            display: grid;
+            grid-template-columns: 400px 1fr;
+        }
+
+        .contact-left-section {
+            background-color: whitesmoke;
+        }
+
+        .contact-h1 {
+            font-size: x-large;
+            color: rgb(40, 40, 172);
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .contact-address,
+        .contact-contact,
+        .contact-follow {
+            font-weight: 700;
+            font-size: large;
+            font-size: medium;
+            padding-left: 4px;
+            text-align: center;
+        }
+
+        .navi-section {
+            color: antiquewhite;
+            font-size: medium;
+            font-weight: normal;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .copywrite-section {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .copywrite-left-section {
+            width: 180px;
+            flex: 1;
+        }
+
+        .h2-copywrite-section {
+            color: antiquewhite;
+            font-size: medium;
+
+        }
+
+        .copywrite-right-section {
+            justify-content: end;
+        }
+
+        .span-about-copywrite,
+        .span-faq-copywrite,
+        .span-contact-copywrite,
+        .span-donation-copywrite {
+            text-decoration: underline;
+            margin-right: 15px;
+            color: antiquewhite;
+            cursor: pointer;
+            display: inline-block;
+            justify-content: end;
+        }
+    </style>
+    <title>school academy</title>
+</head>
+
+<body>
+    <div class="header-div">
+        <div>
+            <h1 class="school-name">
+                SCHOOL ACADEMY
+            </h1>
+        </div>
+        <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+           <div class="right-section">
+            <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button" type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button active" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+    </div>
+    <section class="galery-section">
+        <div class="header">
+            <h1>
+                Our School Gallery
+            </h1>
+            <p>
+                Step into the vibrant life at School Academy! Explore moments of learning, creativity, sports, and
+                community that define our unique environment.
+            </p>
+        </div>
+        <div>
+            <h2 class="futured-moment">
+                Futured Moments
+            </h2>
+            <section class="featured-photos-grid">
+                <div class="item-card">
+                    <img class="" src="./pictures/sciencefair.png" alt="sciencefair">
+                </div>
+                <div class="item-card">
+                    <img class="" src="./pictures/sportday.jpg" alt="sportday">
+                </div>
+                <div class="item-card">
+                    <img class="" src="./pictures/art-festival.jpg" alt="artclass">
+                </div>
+                <div class="item-card">
+                    <img class="" src="./pictures/graduation.jpg" alt="graduation">
+                </div>
+            </section>
+            <h2 class="futured-moment">
+                Recent Uploads
+            </h2>
+            <section class="recent-uploads-grid">
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/chess.jpg" alt="chessclub">
+                </div>
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/libary-time.png" alt="librarytime">
+                </div>
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/music.jpg" alt="musicpractice">
+                </div>
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/garding.jpg" alt="Gardening">
+                </div>
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/coding.png" alt="coding">
+                </div>
+                <div class="recent-uploads-grid-items">
+                    <img src="./pictures/debate.jpg" alt="debate">
+                </div>
+            </section>
+            <h2 class="futured-moment">
+                Explore Our Albums
+            </h2>
+            <section class="albums">
+                <div class="album-grid">
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/sportday.jpg" alt="SportDay">
+                            </div>
+                            <div class="album-content">
+                                <h3>
+                                    Sports Day 2024
+                                </h3>
+                                <p>
+                                    Relive the excitement and competitive spirit of our annual Sports Day, filled with
+                                    teamwork and triumph!
+                                </p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/sciencefair.png" alt="ScienceFair">
+                            </div>
+                            <div class="album-content">
+                                <h3>Science Fair Innovations</h3>
+                                <p>Discover the brilliant minds and innovative projects from this year's incredible
+                                    Science Fair.</p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/art-festival.jpg" alt="Art&Culture Festival">
+                            </div>
+                            <div class="album-content">
+                                <h3>Arts & Culture Festival</h3>
+                                <p>A vibrant collection celebrating the artistic talents and cultural diversity of our
+                                    students.</p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/graduating-students.jpg" alt="GraduationCeremony">
+                            </div>
+                            <div class="album-content">
+                                <h3>Graduation Ceremony 2024</h3>
+                                <p>Cherish the memorable moments as our graduates step forward into their bright
+                                    futures.</p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/throuphy.png" alt="School Trips & Excursions">
+                            </div>
+                            <div class="album-content">
+                                <h3>School Trips & Excursions</h3>
+                                <p>Adventures beyond the classroom! See our students exploring new places and learning
+                                    experientially.</p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/class-learning.jpg" alt="class-learning">
+                            </div>
+                            <div class="album-content">
+                                <h3>Classroom & Learning</h3>
+                                <p>A glimpse into the daily academic life, showcasing interactive lessons and
+                                    collaborative learning.</p>
+                                </p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/service1.jpg" alt="Community & Events">
+                            </div>
+                            <div class="album-content">
+                                <h3>Community & Events</h3>
+                                <p>Photos from various school-wide events, community service, and parent engagement
+                                    activities.</p>
+                                <span><button class="view-button" type="button">View Album</button></span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-pic">
+                                <img src="./pictures/extra.png" alt="Extracurricular Activities">
+                            </div>
+                            <div class="album-content">
+                                <h3>Extracurricular Activities</h3>
+                                <p>From robotics to debate, explore the diverse clubs and activities our students are
+                                    passionate about.</p>
+                                <a href="testimonials.html"><button class="view-button" type="button">View Album</button></a>
+                            </div>
+                        </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+     <section id="ContactDiv">
+         <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                       <p class="contact-contact">
+                         <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                       <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. -->
+                    </div>
+            </div>
+            <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+
+</html>

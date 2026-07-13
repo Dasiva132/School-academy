@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+                body {
+                padding-bottom: 214px;
+                width: 100%;
+                background-color:  #f0f2f5;
+                
+            }
+
+            .header-div {
+                display: flex;
+                flex-direction: row;
+                background-color: rgb(74, 71, 71);
+                padding: 5px;
+                justify-content: space-between;
+            }
+
+            .school-name {
+                color: white;
+            }
+
+            .right-section-header {
+                padding-top: 20px;
+            }
+
+            .span-about,
+            .span-contact,
+            .span-donation {
+                text-decoration: underline;
+                color: blue;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .span-faq {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+                padding-right: 15px;
+            }
+
+            .header-fixed {
+                background-color: aqua;
+                position: sticky;
+                display: flex;
+                flex-direction: row;
+                top: 0;
+                padding: 5px;
+                z-index: 1000;
+                justify-content: space-between;
+            }
+             .left-section {
+                width: 170x;
+                margin-right: 4px;
+             }   
+            .school-logo {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                padding: 5px;
+            }
+            .right-section{
+             flex: 1;
+             align-items: center;
+             justify-content: space-around;
+             display: flex;
+            }
+
+            .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .active{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+                         .Contact-div{
+                background-color: rgb(16, 2, 2);
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .contact-left-section{
+                background-color: whitesmoke;
+            }
+            .contact-h1{
+                font-size: x-large;
+                color: rgb(40, 40, 172);
+                font-weight: 900;
+                text-align: center;
+            }
+            .contact-address,
+            .contact-contact,
+            .contact-follow{
+                font-weight: 700;
+                font-size: large;
+                font-size: medium;
+                padding-left: 4px;
+                text-align: center;
+            }
+            .navi-section{
+                color: antiquewhite;
+                font-size: medium;
+                font-weight: normal;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                text-align: center;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .copywrite-section{
+                display: flex;
+                flex-direction: row;
+            }
+            .copywrite-left-section{
+                width: 180px;
+                flex: 1;
+            }
+            .h2-copywrite-section{
+                color: antiquewhite;
+                font-size:medium ;
+
+            }
+            .copywrite-right-section{
+                justify-content: end;
+            }
+            .span-about-copywrite,
+            .span-faq-copywrite,
+            .span-contact-copywrite,
+            .span-donation-copywrite{
+                text-decoration: underline;
+                margin-right: 15px;
+                color: antiquewhite;
+                cursor: pointer;
+                display: inline-block;
+                justify-content: end;
+            }
+    </style>
+    <title>shool academy</title>
+</head>
+<body>
+    <div class="header-div">
+            <div>
+                <h1 class="school-name">
+                    SCHOOL ACADEMY
+                </h1>
+            </div>
+            <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+           <div class="right-section">
+            <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button active" type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+    </div>
+     <section id="ContactDiv">
+         <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                       <p class="contact-contact">
+                         <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;           
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                        <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. -->
+                    </div>
+            </div>
+            <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

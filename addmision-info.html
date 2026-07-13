@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+                width: 100%;
+                background-color: #f4f7f6
+            }
+
+            .header-div {
+                display: flex;
+                flex-direction: row;
+                background-color: rgb(74, 71, 71);
+                padding: 5px;
+                justify-content: space-between;
+            }
+
+            .school-name {
+                color: white;
+            }
+
+            .right-section-header {
+                padding-top: 20px;
+            }
+
+            .span-about,
+            .span-contact,
+            .span-donation {
+                text-decoration: underline;
+                color: blue;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .span-faq {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+                padding-right: 15px;
+            }
+
+            .header-fixed {
+                background-color: aqua;
+                position: sticky;
+                display: flex;
+                flex-direction: row;
+                top: 0;
+                padding: 5px;
+                z-index: 1000;
+                justify-content: space-between;
+            }
+             .left-section {
+                width: 170x;
+                margin-right: 4px;
+             }   
+            .school-logo {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                padding: 5px;
+            }
+            .right-section{
+             flex: 1;
+             align-items: center;
+             justify-content: space-around;
+             display: flex;
+            }
+
+            .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .active{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+            .school{
+                color: rgb(31, 41, 55);
+                font-size: 50px;
+                margin: 40px;
+                font-family: Inter, sans-serif;
+            }
+
+            .addmision-section{
+                background-color: #ffff;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                max-width: 900px;
+                margin: 50px auto;
+                padding: 30px;
+                display: flex;
+            }
+            
+            .image-cointainer{
+                background-color:  rgb(229, 231, 235);
+                display: flex;
+                flex: 1;
+                border-radius: 8px;
+                padding: 30px;
+                padding-bottom: 60px;
+                aspect-ratio: 1 /1;
+                overflow: hidden;
+            }
+
+            .text-section{
+                background-color: rgb(107, 33, 168);
+                flex: 1;
+                margin-left: 20px;
+                padding: 15px;
+                border-radius: 8px;
+                max-height: fit-content;
+            }
+
+            .image-edit{
+                width: 100%;
+                display: block;
+                height: auto;
+            }
+
+            .text-section p{
+                font-size: 20px;
+                color: rgb(229, 231, 235);
+                margin: 15px;
+            }
+
+            .gain{
+                color: rgb(31, 41, 55);
+                font-size: 50px;
+                margin: 40px;
+                font-family: Inter, sans-serif;
+                text-align: center;
+            }
+
+            .gain-section{
+                background-color: #ffff;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin: 50px auto;
+                display: flex;
+                gap: 20px;
+                justify-content: space-around;
+                flex-direction: row;
+                padding: 30px;
+            }
+
+            .gain-card{
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                border-radius: 6px;
+                box-shadow: 0 4px 8px;
+                min-width: 300px;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .gain-card:hover{
+                transform: translateX(-8px);
+            }
+
+            .card-header-section{
+                position: relative;
+                height: 180px; 
+                display: flex;
+                align-items: flex-end;
+                padding: 15px;
+                color: white;
+                font-weight: bold;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .card-header-section h2{
+                color: rgb(255, 255, 255);
+                font-size: 29px;
+                text-shadow: rgba(0, 0, 0, 0.5);
+                font-family: Times New Roman;
+                z-index: 2;
+                margin: 0;
+                padding-left: 5px;
+            }
+
+            .add-pic{
+                width: 100%;
+                border-radius: 6px;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            .section-content {
+                padding: 20px;
+                line-height: 1.6;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .enquiries{
+                color: rgb(31, 41, 55);
+                font-size: 50px;
+                margin: 40px;
+                font-family: Inter, sans-serif;
+                text-align: center;
+            }
+
+            .enquiries-cointainer{
+                background-color: rgb(81, 81, 160);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                max-width: 650px;
+                margin: 50px auto;
+                padding: 30px;
+                justify-content: center;
+            }
+
+            .inputs{
+                margin-left: 50px;
+            }
+
+            .name,
+            .phone{
+                display: inline-block;
+                justify-items: center;
+            }
+
+            .placeholders{
+                resize: none;
+                height: 150px;
+                width: 500px;
+            }
+
+            .button-div{
+                margin: 15px;
+            }
+
+            .button-div button{
+                display: inline;
+                background-color: #007bff;
+                border: solid;
+                color: #fff;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: background-color 0.3s ease transform 0.2s ease;
+                display: block;
+                margin: auto;
+            }
+
+            .button-div button:hover{
+                background-color:  #0056b3;
+                transform: translateY(-3px);
+            }
+
+            input::placeholder{
+                padding-left: 15px;
+            }
+
+              .Contact-div{
+                background-color: rgb(16, 2, 2);
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .contact-left-section{
+                background-color: whitesmoke;
+            }
+            .contact-h1{
+                font-size: x-large;
+                color: rgb(40, 40, 172);
+                font-weight: 900;
+                text-align: center;
+            }
+            .contact-address,
+            .contact-contact,
+            .contact-follow{
+                font-weight: 700;
+                font-size: large;
+                font-size: medium;
+                padding-left: 4px;
+                text-align: center;
+            }
+            .navi-section{
+                color: antiquewhite;
+                font-size: medium;
+                font-weight: normal;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                text-align: center;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .copywrite-section{
+                display: flex;
+                flex-direction: row;
+            }
+            .copywrite-left-section{
+                width: 180px;
+                flex: 1;
+            }
+            .h2-copywrite-section{
+                color: antiquewhite;
+                font-size:medium ;
+
+            }
+            .copywrite-right-section{
+                justify-content: end;
+            }
+            .span-about-copywrite,
+            .span-faq-copywrite,
+            .span-contact-copywrite,
+            .span-donation-copywrite{
+                text-decoration: underline;
+                margin-right: 15px;
+                color: antiquewhite;
+                cursor: pointer;
+                display: inline-block;
+                justify-content: end;
+            }
+            
+    </style>
+    <title>school academy</title>
+</head>
+<body>
+   <div class="header-div">
+            <div>
+                <h1 class="school-name">
+                    SCHOOL ACADEMY
+                </h1>
+            </div>
+           <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+                    <div class="right-section">
+            <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button" type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button active" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+    </div>
+                    <h1 class="school">
+            Addmission At School Academy
+        </h1>
+        <section class="addmision-section">
+            <div class="image-cointainer">
+                <img class="image-edit" src="./pictures/enroll-now_orig.jpg" alt="enroll-now">
+            </div>
+            <div class="text-section">
+                <p>
+                    <b>SCHOOL-ACADEMY</b> stands as a beacon of intellectual and moral excellence, attracting exceptional thought leaders, visionary managers, and trailblazing technocrats from all spheres of human endeavor. United by an unyielding passion for pioneering innovations and transformative education, we are devoted to raising a new generation of total men and women—holistically developed individuals empowered to redefine their world and lead with wisdom, integrity, and purpose.
+                </p>
+            </div>
+        </section>
+
+        <h1 class="gain">
+            Gain Addmission Into Our:
+        </h1>
+        <section class="gain-section">
+            <div class="gain-card">
+                <div class="card-header-section">
+                    <img class="add-pic" src="./pictures/nusery.jpg" alt="creach/nusery students">
+                    <h2>
+                        Creach/Nuserys
+                    </h2>
+                </div>
+                <div class="section-content">
+                <p>
+                    Our creche provides <strong>a warm, nurturing, and safe haven </strong>where your little ones can thrive. We believe in creating a gentle and loving environment where every child feels cherished and secure. Our dedicated caregivers offer compassionate attention, ensuring a comforting space for your child to explore, play, and take their first steps in a supportive community.
+                </p>
+            </div>
+            </div>
+                        <div class="gain-card">
+                <div class="card-header-section">
+                    <img class="add-pic" src="./pictures/primary.jpg" alt="primary students">
+                    <h2>
+                        Primary
+                    </h2>
+                </div>
+                            <div class="section-content">
+                <p>
+                   Our primary school offers a vibrant and inclusive learning environment where every child is encouraged to reach their full potential. We blend <strong>a  robust academic curriculum with rich extracurricular activities</strong> to foster not just intellectual growth, but also <strong>creativity, critical thinking, and strong character.</strong> Here, your child will embark on an exciting educational journey, building foundational skills while developing a lifelong love for learning in a supportive and engaging community.
+                </p>
+            </div>
+            
+            </div>
+             <div class="gain-card">
+                <div class="card-header-section">
+                    <img class="add-pic" src="./pictures/secondry.avif" alt="secondry students">
+                    <h2>
+                        Secondry
+                    </h2>
+                </div>
+                            <div class="section-content">
+                <p>
+                    Our secondary school is committed to providing <strong>a rigorous academic program</strong> designed to challenge and inspire students as they prepare for higher education and beyond. We cultivate an environment where critical thinking, independent study, and intellectual curiosity are paramount. With a focus on <strong>comprehensive subject mastery and advanced learning opportunities</strong>, we empower students to achieve their academic potential and develop the skills necessary to excel in a competitive global landscape.
+                </p>
+            </div>
+        </section>
+
+        <h1 class="enquiries">
+            Make Enquires
+        </h1>
+        <section class="enquiries-cointainer">
+            <div class=" inputs">
+                <div class="np">
+                <div class="name">
+                    <h2>
+                        Name
+                    </h2>
+                    <input type="text" placeholder="Name" style="width: 270px ;height: 50px; border-radius: 30px; border: none;">
+                </div>
+                <div class="phone">
+                    <h2>
+                        Phone
+                    </h2>
+                    <input type="text" placeholder="Phone" style="margin-left:40px;width: 270px; height:50px; border-radius: 30px; border: none;">
+                </div>
+            </div>
+            <div>
+                <h2>
+                    Mail
+                </h2>
+                <input type="text" placeholder="Mail" style="width: 450px; height:70px ; border-radius: 30px; border: none;">
+            </div>
+            <div>
+                <h2>
+                    Subject
+                </h2>
+                <input type="text" placeholder="Subject" style="width:450px ; height:70px; border-radius: 30px; border: none;">
+            </div>
+            <div>
+                <h2>
+                    Message
+                </h2>
+                <textarea class="placeholders" placeholder="Write a message"></textarea>
+            </div>
+            </div>
+            <div class=" button-div">
+             <button type="button"> Enquire</button>
+            </div>
+        </section>
+        <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                    <p class="contact-contact">
+                       <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                        <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. -->
+                    </div>
+            </div>
+          <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

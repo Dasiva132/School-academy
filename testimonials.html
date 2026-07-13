@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+                width: 100%;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #f0f2f5;
+        }
+
+            .header-div {
+                display: flex;
+                flex-direction: row;
+                background-color: rgb(74, 71, 71);
+                padding: 5px;
+                justify-content: space-between;
+            }
+
+            .school-name {
+                color: white;
+            }
+
+            .right-section-header {
+                padding-top: 20px;
+            }
+
+            .span-about,
+            .span-contact,
+            .span-donation {
+                text-decoration: underline;
+                color: blue;
+                padding-right: 15px;
+                cursor: pointer;
+            }
+
+            .span-faq {
+                color: blue;
+                text-decoration: underline;
+                cursor: pointer;
+                padding-right: 15px;
+            }
+
+            .header-fixed {
+                background-color: aqua;
+                position: sticky;
+                display: flex;
+                flex-direction: row;
+                top: 0;
+                padding: 5px;
+                z-index: 1000;
+                justify-content: space-between;
+            }
+             .left-section {
+                width: 170x;
+                margin-right: 4px;
+             }   
+            .school-logo {
+                display: inline-block;
+                width: 150px;
+                height: 100px;
+                padding: 5px;
+            }
+            .right-section{
+             flex: 1;
+             align-items: center;
+             justify-content: space-around;
+             display: flex;
+            }
+
+                        .home-button,
+        .statement-mission-button,
+        .academic-programs-button,
+        .testimonials-button,
+        .gallery-button,
+        .addmission-info-button,
+        .newsevent-button{
+            background-color:aqua;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 7px;
+                font-weight: 600;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+        }
+
+        .active{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+        .home-button:hover,
+        .statement-mission-button:hover,
+        .academic-programs-button:hover,
+        .testimonials-button:hover,
+        .gallery-button:hover,
+        .addmission-info-button:hover,
+        .newsevent-button:hover{
+            background-color: blue;
+            border: solid;
+            border-color: #fff;
+        }
+
+            .testimonial-section{
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+
+            .header{
+                font-size: 50px;
+                color: aqua;
+                font-weight: bolder;
+                text-align: center;
+                padding:15px 0 ;
+                position: relative;
+                padding-bottom: 15px;
+            }
+            
+             .header::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: #4a90e2;
+                border-radius: 2px;
+            }
+
+            .testimonial-card-grid{
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .testimonial-card{
+                background-color: #ffffff;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                align-items: center;
+                text-align: center;
+            }
+
+            .testimonial-card:hover{
+                transform: translateY(-8px);
+            }
+
+            .quoteicon{
+                display: flex;
+                justify-content: center;
+            }
+            .name-below{
+                color: blue;
+                font-family: fantasy;
+                font-size: x-small;
+                font-weight: lighter;
+            }
+
+            .rating{
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px;
+                padding-top:15px ;
+            }
+            .star{
+                color: goldenrod;
+                font-size: x-large;
+            }
+
+            .author-pic-div{
+                display: flex;
+                justify-content: center;
+            }
+
+            .author-pic{
+                width: 150px;
+                border-radius: 75px;
+            }
+
+                .author-name{
+                    display: block;
+                }
+             .Contact-div{
+                background-color: rgb(16, 2, 2);
+                display: grid;
+                grid-template-columns: 400px 1fr;
+            }
+            .contact-left-section{
+                background-color: whitesmoke;
+            }
+            .contact-h1{
+                font-size: x-large;
+                color: rgb(40, 40, 172);
+                font-weight: 900;
+                text-align: center;
+            }
+            .contact-address,
+            .contact-contact,
+            .contact-follow{
+                font-weight: 700;
+                font-size: large;
+                font-size: medium;
+                padding-left: 4px;
+                text-align: center;
+            }
+            .navi-section{
+                color: antiquewhite;
+                font-size: medium;
+                font-weight: normal;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                text-align: center;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .copywrite-section{
+                display: flex;
+                flex-direction: row;
+            }
+            .copywrite-left-section{
+                width: 180px;
+                flex: 1;
+            }
+            .h2-copywrite-section{
+                color: antiquewhite;
+                font-size:medium ;
+
+            }
+            .copywrite-right-section{
+                justify-content: end;
+            }
+            .span-about-copywrite,
+            .span-faq-copywrite,
+            .span-contact-copywrite,
+            .span-donation-copywrite{
+                text-decoration: underline;
+                margin-right: 15px;
+                color: antiquewhite;
+                cursor: pointer;
+                display: inline-block;
+                justify-content: end;
+            }
+    </style>
+    <title>school academy</title>
+</head>
+<body>
+   <div class="header-div">
+            <div>
+                <h1 class="school-name">
+                    SCHOOL ACADEMY
+                </h1>
+            </div>
+  <div class="right-section-header">
+                <a href="SCHOOL-ACADEMY.html #about-us"><span class="span-about"> About </span></a>
+                <a href="faq.html"><span class="span-faq"> FAQ </span></a>
+                <a href="#ContactDiv"><span class="span-contact"> Contact </span></a>
+                <a href="portal.html"><span class="span-donation"> Portal </span></a>
+            </div>
+        </div>
+        <div class=" header-fixed">
+            <div class="left-section">
+            <img class="school-logo" src="./pictures/logo.png" alt="image not found">
+            </div>
+           <div class="right-section">
+            <a href="SCHOOL-ACADEMY.html">
+                <button class="home-button" type="button"> Home </button>
+            </a>
+            <a href="mission-statement.html">
+                <button class="statement-mission-button" type="button"> Mission Statement</button>
+            </a>
+            <a href="academic-program.html">
+                <button class="academic-programs-button" type="button"> Academic programs</button>
+            </a>
+            <a href="testimonials.html">
+                <button class="testimonials-button active" type="button"> Testimonials </button>
+            </a>
+            <a href="galery.html">
+                <button class="gallery-button" type="button"> Gallery</button>
+            </a>
+            <a href="addmision-info.html">
+                <button class="addmission-info-button" type="button"> Addmission-Info </button>
+            </a>
+            <a href="news&event.html">
+                <button class="newsevent-button" type="button"> News & Event </button>
+            </a>
+        </div>
+        </div>
+                <h1 class="header">
+                            Testimonials
+                        </h1>
+                        <section class="testimonial-section">
+                            <div class="testimonial-card-grid">
+                             <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="image" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Focusing on Academic Excellence & Support:</h4>
+
+                                "Our child has thrived academically since joining School Academy. The teachers are incredibly dedicated and go above and beyond to ensure every student understands the material. The personalized attention and challenging curriculum have truly prepared them for future success. We couldn't be happier with their progress!"
+                                <br>
+                                <span class="name-below">— Mr. & Mrs. Adeyemi.</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/adeyemifamily.png" alt="mrs_adebola_o" style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> Mr. & Mrs. Adeyemi. </h2>
+                                </div>
+                            </div>
+                             <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="image" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Highlighting a Nurturing and Inclusive Environment:</h4>
+                                "From day one, School Academy felt like a second home for my girl. The warm and inclusive environment has helped her build confidence and make wonderful friends. The staff genuinely cares about the emotional well-being of the students, creating a truly supportive community where every child feels valued."
+                                <br>
+                                <span class="name-below">— Mr. Da Siva.</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/parent2.png" alt="Mr Da siva" style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> Mr Da Siva. </h2>
+                                </div>
+                            </div>
+                             <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Reflecting on Overall Positive Experience & Growth:</h4>
+                               "Choosing School Academy was the best decision we made for our children. They wake up excited to go to school every day, and we've seen remarkable growth in their curiosity, critical thinking, and character. It's a vibrant learning community that fosters excellence and joy."
+
+                                <br>
+                                <span class="name-below">-The Williams Family.</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/thewilliamsfamily.png" alt="The Williams Family" style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> The Williams Family</h2>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>From a Student's Perspective:</h4>
+                                "I love going to School Academy! The lessons are fun, and my teachers always help me when I'm stuck. I've learned so much and made amazing friends. The sports teams are great too!"
+
+                                <br>
+                                <span class="name-below">-Aisha M. (Year 8 Student)</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/girl.png" alt=" Aisha M. " style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;">Aisha M. (Year 8 Student)</h2>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Focusing on Facilities and Modern Learning:</h4>
+                                "The facilities at School Academy are state-of-the-art, providing an excellent environment for modern learning. From the well-equipped science labs to the impressive library, my son have access to everything they need to excel. It's clear the school invests in creating the best possible learning experience."
+                                <br>
+                                <span class="name-below">— Mr. David O.</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/sonanddad.png" alt="Mr. David O." style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;">  Mr. David O. (Single Parent)</h2>
+                                </div>
+                            </div>
+                                 <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Praising Dedicated Staff and Communication:</h4>
+                                "The communication from School Academy is outstanding. We always feel informed about our child's progress and any school events. The teachers and administration are approachable, responsive, and clearly passionate about education. It's reassuring to know our child is in such capable hands."
+                                <br>
+                                <span class="name-below">— Maria Rodriguez</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/parent3.png" alt="Maria Rodriguez." style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> Maria Rodriguez ( Single Mother)</h2>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>Emphasizing Holistic Development & Extracurriculars:</h4>
+                                "School Academy offers a fantastic balance of academics and extracurricular activities. Our son has explored his passion for robotics and developed his leadership skills through various clubs. It's not just about grades; they truly focus on developing well-rounded individuals ready for the world."
+                                <br>
+                                <span class="name-below">— Dr. Ben Carter</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/dr.png" alt="Dr. Ben Carter" style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> Dr. Ben Carter</h2>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                            <div class="quoteicon"><img src="./pictures/quote-icon.png" alt="Thoughts" style="width: 50px;"></div>
+                            <p>
+                                 <h4>From a Former Student's Perspective:</h4>
+                               "My time at School Academy was foundational to my success in university and my career. The rigorous academics, combined with the incredible support from my teachers, instilled in me a love for learning and critical thinking skills that I use every day. I'm incredibly grateful for the strong foundation I received there."
+                                <br>
+                                <span class="name-below">— Kwame Nkrumah (Alumnus, Class of 2018)</span>
+                            </p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <div class="author-pic-div">
+                                <img class="author-pic" src="./pictures/former.png" alt="Kwame Nkrumah (Alumnus, Class of 2018)" style="width: 75px;">
+                            </div>
+                            <div class="author-name">
+                                    <h2 style="text-align: center;"> Kwame Nkrumah (Alumnus, Class of 2018)</h2>
+                                </div>
+                            </div>
+                        </div>
+                        </section>
+
+      <section id="ContactDiv">
+         <div class="Contact-div">
+            <div class="contact-left-section"> 
+                 <h1 class="contact-h1">
+                    Address
+                </h1>
+                <p class="contact-address">
+                    P.M.B. 67890, ABUJA Nigeria.
+                    </p>
+                    <h1 class="contact-h1">
+                        Contact
+                    </h1>
+                       <p class="contact-contact">
+                        <img src="./pictures/phone-call-svgrepo-com.svg" alt="phone-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/whatsapp-icon-logo-svgrepo-com.svg" alt="whatsapp-logo"style="width: 50px; height: 20px;"> &#124;+2349166100490 &#124;<br>
+                    <img src="./pictures/gmail-svgrepo-com.svg" alt="gmail.logo" style="height: 20px;width: 50px;">&#124;abolanleoluwafemi001@gmail.com
+                    &#124;
+                    </p>
+                    <h1 class="contact-h1">
+                        Follow Us
+                    </h1>
+                    <div>
+                        <img src="./pictures/facebook-icon-logo-svgrepo-com.svg" alt="facebook-logo" style="width: 100px; height: 50px;">
+                    <img src="./pictures/instagram-2016-logo-svgrepo-com.svg" alt="instagram-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/tiktok-svgrepo-com.svg" alt="tiktok-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/twitter-4-logo-svgrepo-com.svg" alt="twitter-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/youtube-color-svgrepo-com.svg" alt="youtube-logo"style="width: 100px; height: 50px;">
+                    <img src="./pictures/linkedin-svgrepo-com.svg" alt="linkedin-logo"style="width: 100px; height: 50px;">
+                    <!-- facebook instagram x ticktock youtube linkedin &#169; 2025 School Academy. -->->
+                    </div>
+            </div>
+            <div class="contact-right-section">
+                <div>
+                    <hr>
+                    <a href="SCHOOL-ACADEMY.html">
+                        <h1 class="navi-section">
+                            Home
+                        </h1>
+                    </a>
+                    <a href="mission-statement.html">
+                        <h1 class="navi-section">
+                            Mission Statement
+                        </h1>
+                    </a>
+                    <a href="academic-program.html">
+                        <h1 class="navi-section">
+                            Academic Programs
+                        </h1>
+                    </a>
+                    <a href="testimonials.html">
+                        <h1 class="navi-section">
+                            Testimonials
+                        </h1>
+                    </a>
+                    <a href="galery.html">
+                        <h1 class="navi-section">
+                            Gallery
+                        </h1>
+                    </a>
+                    <a href="addmision-info.html">
+                        <h1 class="navi-section">
+                            Addmission-Info
+                        </h1>
+                    </a>
+                    <a href="news&event.html">
+                        <h1 class="navi-section">
+                            News & Events
+                        </h1>
+                    </a>
+                    <hr>
+                </div>
+                <div class="copywrite-section">
+                    <div class="copywrite-left-section">
+                        <h2 class="h2-copywrite-section">
+                            &#169; 2025 School Academy.
+                        </h2>
+                    </div>
+                    <div class="copywrite-right-section">
+                        <a href="SCHOOL-ACADEMY.html #about-us">
+                            <span class="span-about-copywrite">
+                            <h3>
+                                About
+                            </h3>
+                        </span>
+                        </a>
+                        <a href="faq.html">
+                            <span class=" span-faq-copywrite">
+                            <h3>
+                                FAQ
+                            </h3>
+                        </span>
+                        </a>
+                        <span class="span-contact-copywrite">
+                            <h3>
+                                Contact
+                            </h3>
+                        </span>
+                        <a href="portal.html">
+                             <span class="span-donation-copywrite">
+                            <h3>
+                                Portal
+                            </h3>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

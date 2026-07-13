@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Index Calculator</title>
+  <link rel="stylesheet" href="/project/Assignment - Copy.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f5f8fc;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+  background: linear-gradient(135deg, #eaf3ff, #ffffff);
+  flex-wrap: wrap;
+}
+
+.text-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.form-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+}
+
+.form-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-box form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Results Section */
+.results-section {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  flex-wrap: wrap;
+  background: #fff;
+}
+
+.results-section img {
+  width: 600px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+.result-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Tips Section */
+.tips-section {
+  display: grid; /* Changed from flex to grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  background: #f0f4f9;
+}
+
+.tip {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.balanced-diet,
+.active-life-style{
+  width: 100px;
+}
+
+.good-sleep{
+width: 100px;
+}
+.tip:hover {
+  transform: translateY(-5px);
+}
+
+.tip h3 {
+  font-size: 1.3rem;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.tip p {
+  color: #555;
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="text-box">
+      <h1>Health Index Calculator</h1>
+      <p>Use this powerful tool to get a personalized estimate of your overall health rating by analyzing your height and weight. It's a simple yet effective way to gain valuable insights into your physical well-being. Stay informed, track your progress, and make smarter health choices—because a healthier you starts with awareness.</p>
+    </div>
+    <div class="form-box">
+      <h2>Enter your details</h2>
+      <form>
+        <label for="height">Height (cm)
+  <input type="number" id="height" placeholder="e.g. 170" />
+</label>
+<label for="weight">Weight (kg)
+  <input type="number" id="weight" placeholder="e.g. 65" />
+</label>
+
+        <button type="submit">Calculate</button>
+      </form>
+    </div>
+  </header>
+
+  <section class="results-section">
+    <img src="./Image/medical-removebg-preview - Copy.png" alt="Happy healthy person" />
+    <div class="result-text">
+      <h2>Your Health Score</h2>
+      <p>A Health Index between 18.5 and 24.9 suggests you're in a healthy range. Values outside this range may indicate the need for lifestyle changes.</p>
+    </div>
+  </section>
+
+  <footer class="tips-section">
+    <div class="tip">
+      <div>
+        <img class="balanced-diet" src="./Image/Balanced Diet.png" alt="Balanced Diet">
+      </div>
+      <h3>Balanced Diet</h3>
+      <p>Eat fruits, vegetables, lean proteins and whole grains daily.</p>
+    </div>
+    <div class="tip">
+      <div>
+        <img class="active-life-style" src="./Image/Active lifestyle.png" alt="Stay Active">
+      </div>
+      <h3>Stay Active</h3>
+      <p>Engage in at least 30 minutes of physical activity each day.</p>
+    </div>
+    <div class="tip">
+      <div>
+        <img class="good-sleep" src="./Image/Good Sleep.png" alt="Good Sleep">
+      </div>
+      <h3>Good Sleep</h3>
+      <p>Get 7–9 hours of sleep to help your body recover and perform better.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const heightInput = form.querySelector("input[placeholder*='170']");
+  const weightInput = form.querySelector("input[placeholder*='65']");
+
+  const resultText = document.querySelector(".result-text");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const heightCm = parseFloat(heightInput.value);
+    const weightKg = parseFloat(weightInput.value);
+
+    if (isNaN(heightCm) || isNaN(weightKg) || heightCm <= 0 || weightKg <= 0) {
+      resultText.innerHTML = `<h2>Invalid input</h2><p>Please enter valid height and weight values.</p>`;
+      return;
+    }
+
+    const heightM = heightCm / 100;
+    const bmi = (weightKg / (heightM * heightM)).toFixed(1);
+
+    let status = "";
+    if (bmi < 18.5) {
+      status = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      status = "Normal weight";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      status = "Overweight";
+    } else {
+      status = "Obese";
+    }
+
+    resultText.innerHTML = `
+      <h2>Your BMI is ${bmi}</h2>
+      <p>Status: <strong>${status}</strong>. A BMI between 18.5 and 24.9 is considered healthy.</p>
+    `;
+  });
+});
+
+  </script>
+</body>
+</html>

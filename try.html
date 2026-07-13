@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Academy</title>
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            height: 100vh; /* Ensure body takes full viewport height */
+            width: 100vw; /* Ensure body takes full viewport width */
+            overflow: hidden; /* Hide potential scrollbars from the scaled background */
+            position: relative; /* Crucial: Needed for positioning the ::before pseudo-element */
+            font-family: sans-serif; /* For better readability of any future text */
+            color: #333; /* Default text color for content */
+        }
+
+        /* This is the pseudo-element that will hold your blurred background image */
+        body::before {
+            content: ''; /* Required for pseudo-elements */
+            position: absolute; /* Positions it relative to the body */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            /* Your background image settings go here */
+            background-image: url('./pictures/background-image.png');
+            background-position: center; /* Centers the image */
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-repeat: no-repeat; /* Prevents repeating the image */
+            
+            /* THE BLUR EFFECT */
+            filter: blur(8px); /* Adjust this value (e.g., 5px, 10px) for more or less blur */
+            -webkit-filter: blur(8px); /* For Safari browser compatibility */
+            
+            /* Positioning for layering */
+            z-index: -1; /* Puts the blurred background BEHIND any other content in the body */
+            
+            /* Trick to prevent blur artifacts at the edges */
+            transform: scale(1.02); /* Slightly scales up the blurred image to hide potential fuzzy edges */
+        }
+
+        /* This is a wrapper for your actual page content, ensuring it stays sharp */
+        .page-content {
+            position: relative; /* Ensures this div sits ON TOP of the pseudo-element */
+            z-index: 1; /* Make sure it's above the blurred background */
+            text-align: center; /* Example styling */
+            padding: 50px; /* Example padding */
+            color: white; /* Example: make text visible on a potentially dark background */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: for better text readability */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-content">
+        <h1>Welcome to School Academy!</h1>
+        <p>This is where your content will go.</p>
+        <p>Notice how this text is perfectly sharp, while the background image is beautifully blurred.</p>
+        <button style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Learn More</button>
+    </div>
+</body>
+</html>
